@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_all_categories"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Все категории" />
+        <item
+            android:id="@+id/nav_snack"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Закуска" />
+        <item
+            android:id="@+id/nav_firstmeal"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Первые блюда" />
+        <item
+            android:id="@+id/nav_garnish"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Гарниры" />
+        <item
+            android:id="@+id/nav_sauce"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Соусы и подливы" />
+        <item
+            android:id="@+id/nav_drink"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Напитки" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Пожертвования(рофл пункт)" />
+
+        </menu>
+    </item>
+
+</menu>
