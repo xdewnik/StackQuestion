@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+       <AutoCompleteTextView
+        android:id="@+id/allRecipiesSearchText"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:hint="Search recipe here"
+        />
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:padding="2dp"
+        android:layout_width="wrap_content"
+        android:src="@android:drawable/ic_menu_search"
+        android:layout_height="wrap_content"
+        tools:ignore="contentDescription" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/allRecipiesSearchRecycleView" />
+
+
+</LinearLayout>

@@ -17,6 +17,7 @@ android {
                     [
                             'src/main/res/layout/all_recipies_layouts',
                             'src/main/res/layout',
+                            'src/main/res/layout/main_activity_layouts',
                             'src/main/res'
                     ]
         }
