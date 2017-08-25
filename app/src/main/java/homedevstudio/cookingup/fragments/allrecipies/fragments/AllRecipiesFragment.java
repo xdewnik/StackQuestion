@@ -25,6 +25,8 @@ public class AllRecipiesFragment extends AbstractFragment {
     @BindView(R.id.allRecipiesRecycleView) RecyclerView recyclerView;
 
 
+
+    //Позволяет получить экземпляр фрагмента. Нужен для передачи данных например из бд в другие фрагменты
     public static AllRecipiesFragment getInstance(Context context) {
         Bundle args = new Bundle();
         AllRecipiesFragment fragment = new AllRecipiesFragment();
