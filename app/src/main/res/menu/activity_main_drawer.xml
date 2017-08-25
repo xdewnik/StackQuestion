@@ -5,35 +5,35 @@
         <item
             android:id="@+id/nav_all_categories"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Все категории" />
+            android:title="@string/all_categories_drawer" />
         <item
             android:id="@+id/nav_snack"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Закуска" />
+            android:title="@string/snacks_drawer" />
         <item
             android:id="@+id/nav_firstmeal"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Первые блюда" />
+            android:title="@string/first_meals_drawer" />
         <item
             android:id="@+id/nav_garnish"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Гарниры" />
+            android:title="@string/garnish_drawer" />
         <item
             android:id="@+id/nav_sauce"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Соусы и подливы" />
+            android:title="@string/sauce_drawer" />
         <item
             android:id="@+id/nav_drink"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Напитки" />
+            android:title="@string/drinks_drawer" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/communicate_drawer">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Пожертвования(рофл пункт)" />
+                android:title="@string/charity_drawer" />
 
         </menu>
     </item>
