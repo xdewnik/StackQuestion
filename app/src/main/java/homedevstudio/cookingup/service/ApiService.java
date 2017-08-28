@@ -1,6 +1,7 @@
 package homedevstudio.cookingup.service;
 
 import homedevstudio.cookingup.dtos.RecipeDTO;
+import homedevstudio.cookingup.dtos.RecipeList;
 import homedevstudio.cookingup.utils.Urls;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -12,6 +13,6 @@ import retrofit2.http.GET;
 public interface ApiService {
 
     @GET(Urls.RESIPES)
-    Call<RecipeDTO> getMyGson();
+    Call<RecipeList> getMyGson();
 
 }

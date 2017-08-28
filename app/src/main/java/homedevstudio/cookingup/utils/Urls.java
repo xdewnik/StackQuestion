@@ -6,7 +6,7 @@ package homedevstudio.cookingup.utils;
 
 public class Urls {
 
-    public static final String HOST = "192.168.0.103";
+    public static final String HOST = "http://192.168.0.103:8080";
     public static final String RESIPES = "/recipes";
 
 }

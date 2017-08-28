@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gettin_Gson_dialog_title">Please Wait</string>
+    <string name="gettin_Gson_dialog_message">Getting Data</string>
+    <string name="something_wrong">Somethink is wrong:(</string>
+</resources>
