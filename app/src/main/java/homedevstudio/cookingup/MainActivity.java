@@ -45,13 +45,7 @@ public class MainActivity extends AppCompatActivity
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.drawer_layout) DrawerLayout drawer;
     @BindView(R.id.nav_view) NavigationView navigationView;
-    @BindView(R.id.TestRw) RecyclerView recyclerView;
 
-    //временная кнопка, пока не сделаем все карсиво
-    @BindView(R.id.temporallyRefreshButton) FloatingActionButton refreshButton;
-
-    private RecipesAdapter adapterRecipes;
-    private List<RecipeDTO> recipeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,70 +55,6 @@ public class MainActivity extends AppCompatActivity
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-
-
-
-
-
-        refreshButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //Проверка на соеденение с интернетом
-
-                if(InternetConnection.checkConnection(getApplicationContext())){
-                    final ProgressDialog dialog;
-
-                    //Диалог с пользователем
-
-                    dialog = new ProgressDialog(MainActivity.this);
-                    dialog.setTitle(getString(R.string.gettin_Gson_dialog_title));
-                    dialog.setMessage(getString(R.string.gettin_Gson_dialog_message));
-                    dialog.show();
-
-                    //Создаем объект нашего апи
-                    ApiService api = RetrofitClient.getApiService();
-
-                    //Вызываем джесон
-                    Call<RecipeList> call = api.getMyGson();
-
-                    // кол бэк будет вызван как только получит ответ
-                    call.enqueue(new Callback<RecipeList>() {
-                        @Override
-                        public void onResponse(Call<RecipeList> call, Response<RecipeList> response) {
-                            //Dismiss Dialog
-                            dialog.dismiss();
-
-                            if (response.isSuccessful()) {
-                                /**
-                                 * Got Successfully
-                                 */
-                                recipeList= response.body().getRecipes();
-
-                                /**
-                                 * Binding that List to Adapter
-                                 */
-                                adapterRecipes = new RecipesAdapter(MainActivity.this, recipeList);
-                                RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-                                recyclerView.setLayoutManager(mLayoutManager);
-                                recyclerView.setItemAnimator(new DefaultItemAnimator());
-                                recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayoutManager.VERTICAL));
-                                recyclerView.setAdapter(adapterRecipes);
-                                adapterRecipes.notifyDataSetChanged();
-
-                            } else {
-                                Toast toast = Toast.makeText(getApplicationContext(), R.string.something_wrong, Toast.LENGTH_SHORT);
-                                toast.show();
-                            }
-                        }
-
-                        @Override
-                        public void onFailure(Call<RecipeList> call, Throwable t) {
-                            dialog.dismiss();
-                        }
-                    });
-            }
-    }});
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
